@@ -1,0 +1,43 @@
+# ═══════════════════════════════════════════════════════════════════
+# RASPBERRY PI 4  -  Raspberry Pi OS Bookworm (64-bit)
+#
+# STEP 1 - system packages (apt, NOT pip):
+#   sudo apt update && sudo apt full-upgrade -y
+#   sudo apt install -y python3-pip python3-venv python3-dev \
+#     python3-picamera2 python3-gpiozero python3-lgpio \
+#     libzbar0 espeak espeak-ng \
+#     cmake build-essential libopenblas-dev liblapack-dev \
+#     libatlas-base-dev libjpeg-dev
+#
+# STEP 2 - venv MUST see the system picamera2/gpiozero:
+#   python3 -m venv --system-site-packages venv
+#   source venv/bin/activate
+#
+# STEP 3 - add swap BEFORE installing dlib or it will be OOM-killed:
+#   sudo dphys-swapfile swapoff
+#   sudo sed -i 's/^CONF_SWAPSIZE=.*/CONF_SWAPSIZE=2048/' /etc/dphys-swapfile
+#   sudo dphys-swapfile setup && sudo dphys-swapfile swapon
+#
+# STEP 4 - pip install -r requirements-pi.txt   (dlib takes 45-90 min)
+#
+# SHORTCUT: set FACE_BACKEND=lbph in .env, delete the two dlib lines below,
+# and this installs in about two minutes. Less accurate, vastly less painful.
+# ═══════════════════════════════════════════════════════════════════
+
+opencv-contrib-python==4.10.0.84
+numpy==1.26.4
+
+dlib==19.24.6                      # ← compiles from source on ARM
+face-recognition==1.3.0
+face-recognition-models==0.3.0
+
+pyzbar==0.1.9
+qrcode[pil]==7.4.2
+Pillow==10.4.0
+python-dotenv==1.0.1
+pyserial==3.5
+pytest==8.3.3
+pyttsx3==2.90                      # drives espeak on Linux
+
+# picamera2 and gpiozero come from APT (step 1). Do NOT pip install them -
+# the pip versions are broken/outdated on Bookworm.

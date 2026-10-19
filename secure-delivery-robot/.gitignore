@@ -1,0 +1,24 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ══ BIOMETRIC DATA - NEVER COMMIT ══
+data/faces/known/*
+!data/faces/known/.gitkeep
+data/encodings/*
+!data/encodings/.gitkeep
+
+# generated + runtime
+data/qr_codes/*
+!data/qr_codes/.gitkeep
+logs/*
+!logs/.gitkeep
+
+.env
+.vscode/settings.json
+.idea/
+.DS_Store

@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    { "name": "1. Hardware check", "type": "debugpy", "request": "launch",
+      "program": "${workspaceFolder}/tools/check_hardware.py",
+      "cwd": "${workspaceFolder}", "console": "integratedTerminal" },
+    { "name": "2. Camera + mode switching", "type": "debugpy", "request": "launch",
+      "module": "camera.camera_test", "cwd": "${workspaceFolder}", "console": "integratedTerminal" },
+    { "name": "3. Generate QR codes", "type": "debugpy", "request": "launch",
+      "program": "${workspaceFolder}/tools/generate_qr.py",
+      "cwd": "${workspaceFolder}", "console": "integratedTerminal" },
+    { "name": "4. QR detector", "type": "debugpy", "request": "launch",
+      "module": "qr_navigation.qr_detector", "cwd": "${workspaceFolder}", "console": "integratedTerminal" },
+    { "name": "5. Register face", "type": "debugpy", "request": "launch",
+      "module": "face_auth.face_registration",
+      "args": ["--name", "Your Name", "--samples", "6"],
+      "cwd": "${workspaceFolder}", "console": "integratedTerminal" },
+    { "name": "6. Face authentication", "type": "debugpy", "request": "launch",
+      "module": "face_auth.face_authentication", "cwd": "${workspaceFolder}", "console": "integratedTerminal" },
+    { "name": "7. Navigation only", "type": "debugpy", "request": "launch",
+      "module": "navigation.navigation", "cwd": "${workspaceFolder}", "console": "integratedTerminal" },
+    { "name": "8. FULL MISSION (simulated)", "type": "debugpy", "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "args": ["--simulate", "--telemetry"],
+      "cwd": "${workspaceFolder}", "console": "integratedTerminal" },
+    { "name": "9. Demo: skip nav, auth only", "type": "debugpy", "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "args": ["--simulate", "--skip-nav"],
+      "cwd": "${workspaceFolder}", "console": "integratedTerminal" }
+  ]
+}

@@ -1,0 +1,33 @@
+# ═══════════════════════════════════════════════════════════════════
+# LAPTOP / DEVELOPMENT
+#   python -m venv venv && source venv/bin/activate   (Windows: venv\Scripts\activate)
+#   pip install -r requirements.txt
+# For the Raspberry Pi 4 use requirements-pi.txt instead.
+# ═══════════════════════════════════════════════════════════════════
+
+# ── vision (every module depends on this) ──────────────────────────
+opencv-contrib-python==4.10.0.84   # contrib build: needed for the LBPH face backend
+numpy==1.26.4                      # pinned <2.0 - dlib and picamera2 break on numpy 2
+
+# ── face recognition ───────────────────────────────────────────────
+# Prebuilt wheels exist for Windows/macOS/Linux x86. NOT for ARM - see SETUP.md.
+dlib==19.24.6
+face-recognition==1.3.0
+face-recognition-models==0.3.0
+
+# ── speech ─────────────────────────────────────────────────────────
+pyttsx3==2.90
+pywin32==306; sys_platform == "win32"      # pyttsx3 needs this for SAPI5
+
+# ── QR: optional second backend, better on blurred/angled codes ────
+# System lib first: Ubuntu/Pi "sudo apt install libzbar0", macOS "brew install zbar"
+pyzbar==0.1.9
+
+# ── utilities ──────────────────────────────────────────────────────
+qrcode[pil]==7.4.2                 # tools/generate_qr.py
+Pillow==10.4.0
+python-dotenv==1.0.1               # .env overrides for settings.py
+pyserial==3.5                      # ESP32 link (unused until ESP32_ENABLED=True)
+
+# ── dev ────────────────────────────────────────────────────────────
+pytest==8.3.3
