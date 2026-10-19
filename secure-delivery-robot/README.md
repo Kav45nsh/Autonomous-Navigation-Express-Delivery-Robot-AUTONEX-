@@ -204,7 +204,53 @@ secure-delivery-robot/
 Get 1–6 fully working on the laptop before buying a chassis. Debugging vision
 code and motor wiring simultaneously is how these projects stall — and motor
 brownouts produce symptoms that look exactly like software bugs.
+## Team Members and Contributions
 
+The Secure Delivery Robot project was collaboratively developed by four team members. Each member had a primary area of responsibility, while hardware assembly, integration, and physical implementation were shared across the team.
+
+### 1. Kavyansh Tiwari — Raspberry Pi Backend and System Integration
+- Developed the Python backend in the `secure-delivery-robot-final` project.
+- Worked on Raspberry Pi 4 control and integration of the robot's software modules.
+- Contributed to QR-code navigation, camera management, face authentication, and the delivery mission workflow.
+- Worked on software integration, testing, and debugging.
+- Participated in hardware assembly and physical implementation.
+
+**Primary responsibility:** Raspberry Pi software backend and overall system integration.
+
+### 2. Vishwadeep Hulke — ESP32 Backend and Motor Control
+- Responsible for ESP32 firmware and backend development.
+- Worked on microcontroller-based motor control and communication between the ESP32 and the main robot system.
+- Contributed to firmware testing and hardware integration.
+- Participated in hardware assembly and physical implementation.
+
+**Primary responsibility:** ESP32 firmware and motor-control subsystem.
+
+### 3. Aryan Singh — Hardware Assembly and Physical Implementation
+- Contributed to the physical assembly of the delivery robot.
+- Worked on hardware component arrangement, installation, and integration.
+- Participated in physical implementation and hardware testing.
+- Collaborated with the team to integrate the software and hardware subsystems.
+
+**Primary responsibility:** Hardware assembly and physical implementation.
+
+### 4. Akshat Kulkarni — Documentation and Hardware Assembly
+- Responsible for project documentation and maintaining technical descriptions of the system.
+- Worked on documenting the architecture, components, implementation process, and project progress.
+- Contributed to hardware assembly and physical implementation.
+- Collaborated with the team during hardware integration and testing.
+
+**Primary responsibility:** Technical documentation and hardware assembly.
+
+### Team Collaboration
+
+All four members contributed to hardware assembly and physical implementation. Kavyansh Tiwari and Vishwadeep Hulke additionally worked on hardware integration alongside their respective software and firmware responsibilities. The team collaborated on integrating, testing, and validating the complete delivery robot.
+
+### Major Project Modules
+
+- **Raspberry Pi backend:** Mission orchestration, camera management, QR navigation, and face authentication.
+- **ESP32 backend:** Microcontroller firmware, motor control, and communication.
+- **Hardware subsystem:** Physical assembly, sensors, motors, and compartment-lock integration.
+- **Documentation:** System architecture, hardware details, testing procedures, and project reporting.
 1. Camera opens, modes switch cleanly
 2. QR codes detected, correct commands resolved
 3. Navigator steers correctly against simulated motors
